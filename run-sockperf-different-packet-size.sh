@@ -12,8 +12,10 @@ do
         do
                 var="log"
 
-                #send packet
+                #send packet with TCP
                 #sockperf throughput --tcp -i $IP -p 12321 -m $msg -t 10  >> $var
+                
+                #send packet with UDP
                 sockperf throughput -i $IP -p 12321 -m $msg -t 10  >> $var
 
                 sleep 3
