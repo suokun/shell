@@ -17,9 +17,6 @@ do
                 
                 #send packet with UDP
                 sockperf throughput -i $IP -p 12321 -m $msg -t 10  >> $var
-                
-                #send packet measure latency with TCP
-                sockperf under-load --tcp -i $IP -p 12321 -t 10  >> $var
 
                 sleep 3
 
