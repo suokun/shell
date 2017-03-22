@@ -23,7 +23,7 @@ do
                 i=$(( $i + 1 ))
         done
 
-        echo "msg:"$msg
+        #echo "msg:"$msg
         grep "sockperf: Summary: BandWidth" ./$var | awk ' { print ( $(NF-3) ) }' | awk '{sum+=$1}END{print sum/10 }'
         rm $var
         i=1
