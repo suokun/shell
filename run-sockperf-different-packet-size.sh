@@ -17,6 +17,9 @@ do
                 
                 #send packet with UDP
                 sockperf throughput -i $IP -p 12321 -m $msg -t 10  >> $var
+                
+                #send packet measure latency with TCP
+                sockperf under-load --tcp -i $IP -p 12321 -t 10  >> $var
 
                 sleep 3
 
@@ -25,7 +28,7 @@ do
 
         #echo "msg:"$msg
         grep "sockperf: Summary: BandWidth" ./$var | awk ' { print ( $(NF-3) ) }' | awk '{sum+=$1}END{print sum/10 }'
-        rm $var
+#        rm $var
         i=1
 
 msg=$(( $msg * 2 ))
