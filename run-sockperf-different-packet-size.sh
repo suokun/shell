@@ -25,7 +25,7 @@ do
 
         #echo "msg:"$msg
         grep "sockperf: Summary: BandWidth" ./$var | awk ' { print ( $(NF-3) ) }' | awk '{sum+=$1}END{print sum/10 }'
-#        rm $var
+        rm $var
         i=1
 
 msg=$(( $msg * 2 ))
