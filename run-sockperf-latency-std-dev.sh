@@ -42,4 +42,5 @@ sed -n 's/)//p' t1 | awk '{sum+=$1}END{print sum/10 }'
 
 rm t0
 rm t1
+rm $var
 
